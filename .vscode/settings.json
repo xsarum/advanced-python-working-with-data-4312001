@@ -18,7 +18,11 @@
     "screencastMode.onlyKeyboardShortcuts": true,
     "terminal.integrated.fontSize": 20,
     "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.colorTheme": "Monokai Dimmed",
     "workbench.fontAliasing": "antialiased",
-    "workbench.statusBar.visible": true
+    "workbench.statusBar.visible": true,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "none"
 }

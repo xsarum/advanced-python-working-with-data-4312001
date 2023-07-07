@@ -8,15 +8,26 @@ values = [3.0, 2.5, 5.1, 4.1, 1.8, 1.6, 2.2, 5.7, 6.1]
 strings = ["one", "three", "five", "seven", "eleven", "eighteen"]
 
 
-# TODO: The min() function finds the minimum value
+# # TODO: The min() function finds the minimum value
+# print(f"The minimum is: {min(values)} ")
+# print(f"The minimum is: {min(strings, key=len)} ")
 
-
-# TODO: The max() function finds the maximum value
-
+# # TODO: The max() function finds the maximum value
+# print(f"The maximum is: {max(values)} ")
+# print(f"The maximum is: {max(strings, key=len)} ")
 
 # TODO: define a custom "key" function to extract a data field
-
+def getmag(dataitem):
+    magnitude = dataitem['properties']['mag']
+    if magnitude is None:
+        magnitude = 0
+    return magnitude
 
 # TODO: open the data file and load the JSON
-# with open("../../30DayQuakes.json", "r") as datafile:
-#     data = json.load(datafile)
+with open("30DayQuakes.json", "r") as datafile:
+    data = json.load(datafile)
+
+# print(data["metadata"]["title"])
+# print(len(data["features"]))
+# print(min(data["features"], key=getmag))
+print(max(data["features"], key=getmag))
